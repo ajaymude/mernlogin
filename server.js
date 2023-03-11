@@ -4,7 +4,6 @@ import mongoose, { get }  from 'mongoose'
 import cors from 'cors'
 
 
- const t1 = performance.now()
 
 
 
@@ -36,7 +35,7 @@ const ushema = mongoose.Schema({
         unique:true
     }
 })
-const t2 = performance.now()
+
 
 const Umodel = mongoose.model('user', ushema)  
 
@@ -70,8 +69,6 @@ app.get('/showalluser', async(req,res)=>{
 })
 
 
-const t = t2-t1
-console.log(t)
 
 // server listen 
 app.listen(8000 , ()=>{ console.log(  ' server is runnig on port 8000')})
